@@ -16,7 +16,7 @@ function git_color {
     echo -e $COLOR_RED
   elif [[ $git_status =~ "rien à valider" ]]; then
     echo -e $COLOR_GREEN
-  elif [[ $git_status =~ "lol" ]]; then
+  elif [[ $git_status =~ "Votre branche est en avance sur" ]]; then
     echo -e $COLOR_YELLOW
   else
     echo -e $COLOR_OCHRE
