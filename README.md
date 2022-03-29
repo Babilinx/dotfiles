@@ -2,6 +2,8 @@
 All of my customized dotfiles
 ![]()
 # Installation
+**Not in place yet !**
+
 (be sure ~/dotfiles don't exist, else yo will get an error)
 ```
 git clone https://github.com/Babilinx/dotfiles_profile.git ~/dotfiles
