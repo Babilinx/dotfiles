@@ -1,6 +1,6 @@
 # Bastien's dotfiles
 All of my customized dotfiles
-![]()
+
 # Installation
 **Not in place yet !**
 
@@ -23,7 +23,7 @@ source ~/.bashrc
 ## Prompt
 ### PS1
 Custom prompt, with time, directory, Git branch and '$' (or '#' for root) :
-![]()
+![](https://github.com/Babilinx/dotfiles_profile/blob/main/Images/prompt.png?raw=true)
 ### Git status
 Showing Git status :
 ![]()
