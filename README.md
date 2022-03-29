@@ -13,7 +13,7 @@ Save your current `.bashrc` file if you want to keep it later.
 cd ~/dotfiles
 ./install.sh
 ```
-> Be cafefull : it will erase all content in `~/.bashrc` file
+**Be cafefull : it will erase all content in `~/.bashrc` file**
 
 Et voilà ! Just restart your terminal or do:
 ```
