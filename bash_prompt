@@ -12,14 +12,18 @@ COLOR_RESET="\033[0m"
 function git_color {
   local git_status="$(git status 2> /dev/null)"
 
-  if [[ ! $git_status =~ ", la copie de travail est propre" ]]; then
+  if [[ $git_status =~ "Modifications qui ne seront pas validées" ]]; then
     echo -e $COLOR_RED
-  elif [[ $git_status =~ "rien à valider" ]]; then
-    echo -e $COLOR_GREEN
+  elif [[ $git_status =~ "Modifications qui seront validées" ]]; then
+    echo -e $COLOR_BLUE
   elif [[ $git_status =~ "Votre branche est en avance sur" ]]; then
     echo -e $COLOR_YELLOW
-  else
-    echo -e $COLOR_OCHRE
+#  elif [[ ! $git_status =~ ", la copie de travail est propre" ]]; then
+#    echo -e $COLOR_RED
+  elif [[ $git_status =~ "rien à valider" ]]; then
+    echo -e $COLOR_GREEN
+#  else
+#    echo -e $COLOR_OCHRE
   fi
 }
 
