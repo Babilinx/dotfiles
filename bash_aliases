@@ -11,11 +11,13 @@ alias dl="cd ~/Téléchargements"
 alias dt="cd ~/Bureau"
 alias dc="cd ~/Documents"
 alias p="cd ~/Documents/Github"
+
 # Git things
 alias add="git add"
 alias pull="git pull"
 alias commit="git commit -m"
 alias push="git push"
+alias checkout="git checkout"
 
 # Detect which `ls` flavor is in use
 if [ "ls --color > /dev/null 2>&1" ]; then # GNU `ls`
@@ -46,3 +48,6 @@ alias egrep='egrep --color=auto'
 
 # Get week number
 alias week='date +%V'
+
+# Clear screen
+alias cl="clear"
