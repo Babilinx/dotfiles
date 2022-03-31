@@ -22,8 +22,6 @@ function git_color {
 #    echo -e $COLOR_RED
   elif [[ $git_status =~ "rien à valider" ]]; then
     echo -e $COLOR_GREEN
-#  else
-#    echo -e $COLOR_OCHRE
   fi
 }
 
