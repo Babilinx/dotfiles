@@ -14,7 +14,7 @@ function git_color {
 
   if [[ $git_status =~ "Modifications qui ne seront pas validées" ]]; then
     echo -e $COLOR_RED
-  elif [[ $git_status =~ "Modifications qui seront validées" ]]; then
+  elif [[ $git_status =~ "Changes to be committed" ]]; then
     echo -e $COLOR_BLUE
   elif [[ $git_status =~ "Your branchin ahead of" ]]; then
     echo -e $COLOR_YELLOW
