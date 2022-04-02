@@ -16,7 +16,7 @@ function git_color {
     echo -e $COLOR_RED
   elif [[ $git_status =~ "Changes to be committed" ]]; then
     echo -e $COLOR_BLUE
-  elif [[ $git_status =~ "Your branchin ahead of" ]]; then
+  elif [[ $git_status =~ "Your branch is ahead of" ]]; then
     echo -e $COLOR_YELLOW
 #  elif [[ ! $git_status =~ ", la copie de travail est propre" ]]; then
 #    echo -e $COLOR_RED
