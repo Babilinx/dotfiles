@@ -22,13 +22,13 @@ source ~/.bashrc
 ## Prompt
 ### PS1
 Custom prompt, with time, directory, Git branch and '$' (or '#' for root) :
-![](https://github.com/Babilinx/dotfiles_profile/blob/main/Images/prompt.png?raw=true)
+![](https://github.com/Babilinx/dotfiles_profile/blob/main/img/prompt.png?raw=true)
 ### Git status
 Showing Git status :
 ![]()
 ### Shell title
 Custom shell title with username, directory and Git branch for better navigation between tabs :
-![](https://github.com/Babilinx/dotfiles_profile/blob/main/Images/customshelltitle.png?raw=true)
+![](https://github.com/Babilinx/dotfiles_profile/blob/main/img/customshelltitle.png?raw=true)
 ## Aliases
 [List]() of all aliases
 # My sources of inspiration
