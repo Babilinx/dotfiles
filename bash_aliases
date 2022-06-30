@@ -10,7 +10,7 @@ alias -- -="cd -"
 alias dl="cd ~/Téléchargements"
 alias dt="cd ~/Bureau"
 alias dc="cd ~/Documents"
-alias p="cd ~/Documents/Github"
+alias p="cd ~/Documents/Github && cd"
 
 # Git things
 alias add="git add"
