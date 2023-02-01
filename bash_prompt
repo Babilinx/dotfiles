@@ -9,8 +9,25 @@ COLOR_RESET="\033[0m"
 
 
 # Change color of current git branch in function of it status
+function git_symbol {
+  git_status="$(git status 2> /dev/null)"
+
+  if [[ $git_status =~ "Modifications qui ne seront pas validées" ]]; then
+    echo -e "󱓋"
+  elif [[ $git_status =~ "Modifications qui seront validées" ]]; then
+    echo -e "󱓊"
+  elif [[ $git_status =~ "Votre branche est en avance sur" ]]; then
+    echo -e "󱓎"
+#  elif [[ ! $git_status =~ ", la copie de travail est propre" ]]; then
+#    echo -e $COLOR_RED
+  elif [[ $git_status =~ "rien à valider" ]]; then
+    echo -e "󱓏"
+  fi
+}
+
+# Change color of current git branch in function of it status
 function git_color {
-  local git_status="$(git status 2> /dev/null)"
+  git_status="$(git status 2> /dev/null)"
 
   if [[ $git_status =~ "Modifications qui ne seront pas validées" ]]; then
     echo -e $COLOR_RED
@@ -25,6 +42,7 @@ function git_color {
   fi
 }
 
+
 # Get cuttent branch name
 function git_branch {
   local git_status="$(git status 2> /dev/null)"
@@ -33,10 +51,10 @@ function git_branch {
 
   if [[ $git_status =~ $on_branch ]]; then
     local branch=${BASH_REMATCH[1]}
-    echo ":$branch"
+    echo " $branch"
   elif [[ $git_status =~ $on_commit ]]; then
     local commit=${BASH_REMATCH[1]}
-    echo "|$commit"
+    echo " $commit"
   fi
 }
 
@@ -51,9 +69,12 @@ fi
 
 # Make the prompt as we want
 PS1="\[\033]0;\u/../\W\$(git_branch)\007\]"           # set the current directory as terminal's name
+PS1+="\n"
 PS1+="\[$COLOR_GREEN\][\t] "           # time
 PS1+="\[$COLOR_WHITE\]\w"          # basename of pwd
-PS1+="\[\$(git_color)\]"        # colors git status
+PS1+="\$(git_color)"           # prints current branch
 PS1+="\$(git_branch)"           # prints current branch
+PS1+=" \[\$(git_symbol)\]"        # colors git status
+PS1+="\n"
 PS1+="\[$USERCOLOR\]\$\[$COLOR_RESET\] "   # '#' for root in red, else '$' in blue
 export PS1
