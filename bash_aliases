@@ -15,7 +15,7 @@ alias p="cd ~/Documents/Github && cd"
 # Git things
 alias add="git add"
 alias pull="git pull"
-alias commit="git commit -m"
+alias commit="git commit"
 alias push="git push"
 alias checkout="git checkout"
 alias rebase="git rebase"
