@@ -1,0 +1,204 @@
+format = """
+$username$hostname$directory$git_branch$git_commit$git_metrics$fill$cmd_duration$git_status$git_state$python$time
+$character
+"""
+
+
+
+[git_branch]
+symbol = " "
+style = 'bold 215'
+format = '[$symbol$branch(:$remote_branch)]($style) '
+
+[git_commit]
+commit_hash_length = 7
+style = 'bold blue'
+format = '[\( $hash$tag\)]($style) '
+
+[git_status]
+format = '([\[$all_status$ahead_behind\]]($style) )'
+style = "white"
+stashed = "[${count}*](bold green)" 
+modified = "[${count}+](bold yellow)" 
+deleted =  "[${count}-](bold red)" 
+conflicted =  "[${count}~](bold red)" 
+ahead = "⇡${count}"
+behind = "⇣${count}"
+untracked = "[${count}?](bold blue)" 
+staged = "[${count}+](bold green)"
+
+[git_metrics]
+disabled = false
+only_nonzero_diffs = false
+format = '[+$added]($added_style)/[-$deleted]($deleted_style) '
+
+[git_state]
+style =	"bold red"
+format = "[$state( $progress_current/$progress_total) ]($style)"
+rebase = "rebase"
+merge = "merge"	
+revert = "revert"	
+cherry_pick = "cherry"
+bisect = "bisect"	
+am = "am"	
+am_or_rebase = "am/rebase"
+
+[character]
+success_symbol = "[>](bold green)"
+error_symbol = "[x](bold red)"
+vimcmd_symbol = "[<](bold green)"
+
+[hostname]
+ssh_only = true 
+format = '[$ssh_symbol](bold green)@$hostname '
+disabled = false
+
+[username]
+style_root = "bold red"
+style_user = "bold cyan"
+format = '[$user]($style) '
+show_always = false
+
+[time]
+disabled = false
+style = 'bold white'
+format =' [$time]($style) ' 
+time_format = '%T'
+
+[directory]
+read_only = " "
+style = "bold white"
+repo_root_style = "bold 215"
+truncation_length = 7
+repo_root_format = '[$before_root_path]($style)[$repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style) '
+
+[cmd_duration]
+min_time = 500
+format = ' [󱑂 $duration](bold grey) '
+
+[aws]
+symbol = "  "
+
+[buf]
+symbol = " "
+
+[c]
+symbol = " "
+
+[conda]
+symbol = " "
+
+[dart]
+symbol = " "
+
+[docker_context]
+symbol = " "
+
+[elixir]
+symbol = " "
+
+[elm]
+symbol = " "
+
+[fill]
+symbol = " "
+
+[golang]
+symbol = " "
+
+[guix_shell]
+symbol = " "
+
+[haskell]
+symbol = " "
+
+[haxe]
+symbol = "⌘ "
+
+[hg_branch]
+symbol = " "
+
+[java]
+symbol = " "
+
+[julia]
+symbol = " "
+
+[lua]
+symbol = " "
+
+[memory_usage]
+symbol = " "
+
+[meson]
+symbol = "喝 "
+
+[nim]
+symbol = " "
+
+[nix_shell]
+symbol = " "
+
+[nodejs]
+symbol = " "
+
+[os.symbols]
+Alpine = " "
+Amazon = " "
+Android = " "
+Arch = " "
+CentOS = " "
+Debian = " "
+DragonFly = " "
+Emscripten = " "
+EndeavourOS = " "
+Fedora = " "
+FreeBSD = " "
+Garuda = "﯑ "
+Gentoo = " "
+HardenedBSD = "ﲊ "
+Illumos = " "
+Linux = " "
+Macos = " "
+Manjaro = " "
+Mariner = " "
+MidnightBSD = " "
+Mint = " "
+NetBSD = " "
+NixOS = " "
+OpenBSD = " "
+openSUSE = " "
+OracleLinux = " "
+Pop = " "
+Raspbian = " "
+Redhat = " "
+RedHatEnterprise = " "
+Redox = " "
+Solus = "ﴱ "
+SUSE = " "
+Ubuntu = " "
+Unknown = " "
+Windows = " "
+
+[package]
+disabled = true
+
+[python]
+symbol = " "
+format = ' [${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+
+[rlang]
+symbol = "ﳒ "
+
+[ruby]
+symbol = " "
+
+[rust]
+symbol = " "
+
+[scala]
+symbol = " "
+
+[spack]
+symbol = "🅢 "
+
