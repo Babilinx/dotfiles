@@ -11,3 +11,6 @@ fi
 cp -r nvim ~/.config/
 
 cp starship.toml ~/.config/starship.toml
+
+mkdir ~/.config/kitty/
+cp kitty.conf ~/.config/kitty/kitty.conf
