@@ -9,3 +9,5 @@ if [ -d "~/.config/nvim/" ]; then
 fi
 
 cp -r nvim ~/.config/
+
+cp starship.toml ~/.config/starship.toml
