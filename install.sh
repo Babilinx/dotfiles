@@ -12,6 +12,8 @@ TARGET=$(gum choose "laptop-gentoo-intel" "desktop-gentoo-amd" "generic")
 echo -e "\ntarget: $TARGET\n"
 
 for config_folder in $(ls -d */); do
+	[ "$config_folder" == "img/" ] && continue
+
 	if [[ -r "install.sh" ]] && [[ -f "install.sh" ]]; then
 		echo -e -n "installing ${config_folder}..."
 		TARGET="$TARGET" bash ${config_folder}/install.sh 2> /dev/null
