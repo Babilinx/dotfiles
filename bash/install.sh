@@ -8,5 +8,5 @@ generic() {
 
 
 case $TARGET in
-	*) gereric;;
+	*) generic;;
 esac
