@@ -8,3 +8,5 @@ for file in ~/dotfiles/bash/{path,bash_prompt,bash_aliases,bash_aliases_user}; d
 	[ -r "$file" ] && [ -f "$file" ] && source "$file"
 done
 unset file
+
+eval "$(starship init bash)"
