@@ -54,3 +54,26 @@ alias week='date +%V'
 
 # Clear screen
 alias cl="clear"
+
+# Install specified package
+alias einstall="emerge -av"
+
+# Remove package
+alias eremove="emerge -avc"
+
+# Update system packages
+eupdate() {
+	emerge -avuDN --keep-going --with-bdeps=y @world &&
+	emerge -a --depclean &&
+	flatpak update &&
+	grub-mkconfig -o /boot/grub/grub.cfg
+}
+
+# Update system packages, then poweroff (for long compil time over night/day)
+eupdate-poweroff() {
+        emerge -vuDN --keep-going --with-bdeps=y @world &&
+        emerge --depclean &&
+        flatpak	update -y &&
+        grub-mkconfig -o /boot/grub/grub.cfg
+	loginctl poweroff
+}
