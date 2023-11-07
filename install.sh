@@ -7,7 +7,8 @@ COLOR_RESET='\033[0m'
 echo "Babilinx's dotfiles installer"
 echo -e "\n\n"
 
-echo "Select device (only for me, if you want to try dotfiles, select 'generic')"
+echo "Select device:"
+echo "Note: If you want to try some things, do the install manually!"
 TARGET=$(gum choose "laptop-gentoo-intel" "desktop-gentoo-amd" "generic")
 echo -e "\ntarget: $TARGET\n"
 
