@@ -1,5 +1,5 @@
-# Bastien's dotfiles
-All of my customized dotfiles
+# My dotfiles
+All of my customized things that i want to save
 
 # Installation
 
@@ -20,17 +20,11 @@ source ~/.bashrc
 ```
 # Customizations
 ## Prompt
-### PS1
-Custom prompt, with time, directory, Git branch and '$' (or '#' for root) :
-![](https://github.com/Babilinx/dotfiles_profile/blob/main/img/prompt.png?raw=true)
-### Git status
-Showing Git status :
-![]()
-### Shell title
-Custom shell title with username, directory and Git branch for better navigation between tabs :
-![](https://github.com/Babilinx/dotfiles_profile/blob/main/img/customshelltitle.png?raw=true)
+Custom prompt, using [Sharship](https://shatship.rs) (see `starship/shmtarship.toml`)
+
 ## Aliases
-[List]() of all aliases
+Not updated...
+
 # My sources of inspiration
  - [Mathias Bynens's dotfiles repo](https://github.com/mathiasbynens/dotfiles) for setting up files fixtures
  - [Jake Romer article](https://coderwall.com/p/pn8f0g/show-your-git-status-and-branch-in-color-at-the-command-prompt) for the base of bash_prompt customization code
