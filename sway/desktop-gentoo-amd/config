@@ -25,7 +25,7 @@ set $poweroff loginctl poweroff
 # Reboot cmd
 set $reboot loginctl reboot
 # Screenshot tool
-set $screenshot grim /home/bastien/Images/'Captures d’écran'/$(date).png
+set $screenshot grim /home/bastien/Images/Screenshots/$(date +'%F-%H%M%S_grim.png')
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
