@@ -13,14 +13,20 @@ alias dc="cd ~/Documents"
 alias p="cd ~/Documents/Github && cd"
 
 # Git things
-alias add="git add"
-alias pull="git pull"
-alias commit="git commit"
-alias push="git push"
-alias checkout="git checkout"
-alias rebase="git rebase"
-alias merge="git merge"
-alias branch="git branch"
+alias ga="git add"
+alias gpl="git pull"
+alias gc="git commit"
+alias gp="git push"
+alias gpo="git push origin"
+alias gpf="git push fork"
+alias gpom="git push origin main"
+alias gpfm="git push fork main"
+alias gco="git checkout"
+alias gcob="git checkout -b"
+alias gr="git rebase"
+alias gm="git merge"
+alias gb="git branch"
+alias gs="git status"
 
 # Detect which `ls` flavor is in use
 if [ "ls --color > /dev/null 2>&1" ]; then # GNU `ls`
