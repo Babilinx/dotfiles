@@ -1,0 +1,141 @@
+{
+    "layer": "top",	
+    "position": "top",
+    "height": 26,
+
+
+    "modules-left": ["sway/workspaces", "custom/scratch", "sway/mode", "sway/window"],
+    "modules-center": [],
+    "modules-right": ["network", "temperature", "pulseaudio", "battery", "backlight", "privacy", "keyboard-state", "clock", "tray"],
+
+
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "disable-markup": true,
+        "format": "{index}" 
+},
+
+
+    "sway/window": {
+        "format": "{}",
+        "max-length": 150
+},
+
+
+    "custom/scratch": {
+        "interval": 1,
+        "exec": "swaymsg -t get_tree | jq 'recurse(.nodes[]) | first(select(.name==\"__i3_scratch\")) | .floating_nodes | length | select(. >= 0)'",
+        "format": "^{}", 
+        "on-click": "swaymsg 'scratchpad show'",
+        "on-click-right": "swaymsg 'move scratchpad'"
+},
+
+
+    "tray": {
+        "icon-size": 18,
+        "spacing": 15
+},
+
+
+    "clock": {
+        "format": "{:%a %b %e  %R}",
+        "interval": 30
+},
+
+    "battery": {
+        "bat": "BAT1",
+        "states": {
+            "full": 95,
+            "normal": 90,
+            "warning": 35,
+            "critical": 20
+},
+
+        "format": "{icon} {capacity}%",
+        "format-full-discharging": "<span color='#b8bb26'> </span> {capacity}%",
+        "format-discharging-normal": "{icon} {capacity}%", 
+        "format-discharging-warning": "<span color='#fabd2f'>{icon}</span> {capacity}%",
+        "format-discharging-critical": "<span color='#fb4934'>{icon}</span> {capacity}%",
+        "format-charging-full": "<span color='#83a898'>{icon}</span> {capacity}%",
+        "format-charging": "<span color='#8ec07c'>{icon}</span> {capacity}%",
+        "format-icons": ["", "", "", "", ""],
+        "interval": 5,
+        "tooltip": "true",
+        "tooltip-format-discharging": "Power: {power}W\n{timeTo}",
+        "tooltip-format-charging": "Power: {power}W\n{timeTo}"
+},
+
+    "network": {
+        "format-ethernet": "󰈀 {bandwidthUpOctets} / {bandwidthDownOctets}",
+        "format-wifi": " {bandwidthUpOctets} / {bandwidthDownOctets}",
+        "format-disconnected": "",
+        "tooltip-format-ethernet": "Interface : {ifname}\nIP : {ipaddr}",
+        "tooltip-format-wifi": "Interface : {ifname}\nSSID : {essid}\nSignal : {signalStrength}\nFrequency: {frequency}\nIP: {ipaddr}",
+        "interval": 2
+},
+
+    "temperature": {
+        "termal-zone": "3",
+        "critical-threshold": 80,
+        "format": "{icon} {temperatureC}°C",
+        "format-icons":["", "", "", ""],
+        "format-critical": "<span color='#cc241d'>!</span> {temperatureC}°C",
+        "interval": 5
+},
+
+    "backlight": {
+        "device": "intel_backlight",
+        "format": " {percent}%",
+        "on-scroll-up": "light -A 5",
+        "on-scroll-down": "light -U 5",
+        "interval": 5
+},
+
+    "privacy": {
+        "icon-spacing": 4,
+        "icon-size": 14,
+        "transition-duration": 2,
+        "modules": [
+            {
+                "type": "screenshare",
+                "tooltip": true,
+                "tooltip-icon-size": 24
+            },
+            {
+                "type": "audio-out",
+                "tooltip": true,
+                "tooltip-icon-size": 24
+		    },
+            {
+                "type": "audio-in",
+                "tooltip": true,
+                "tooltip-icon-size": 24
+            }
+        ]
+},
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "󰝟 ",
+        "interval": 60,
+
+        "format-icons": {
+            "default": [""]
+        },
+
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "on-scroll-up": "exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+ -l 1.2",
+        "on-scroll-down": "exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%- -l 1.2",
+    
+},
+    "keyboard-state": {
+        "numlock": true,
+        "capslock": true,
+        "format": "{name} {icon}",
+        "format-icons": {
+            "locked": "",
+            "unlocked": ""
+        }
+    }
+
+}
