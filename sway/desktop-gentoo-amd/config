@@ -20,10 +20,8 @@ set $term foot
 # on the original workspace that the command was run on.
 #set $menu dmenu_path | dmenu | xargs swaymsg exec --
 set $menu tofi-drun --drun-launch=true
-# Poweroff cmd
-set $poweroff loginctl poweroff
-# Reboot cmd
-set $reboot loginctl reboot
+# Custom power menu (/home/$USER/bin needs to be in $PATH)
+set $powermenu powermenu
 # Screenshot tool
 set $screenshot grim /home/bastien/Images/Screenshots/$(date +'%F-%H%M%S_grim.png')
 ### Output configuration
