@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+temp=$(sensors coretemp-isa-0000 -j | jq '."coretemp-isa-0000"."Package id 0".temp1_input')
+
+temp=${temp%.*}
+
+if [ $temp -lt 40 ]; then
+    echo " $temp"
+elif [ $temp -lt 50 ]; then
+    echo " $temp"
+elif [ $temp -lt 60 ]; then
+    echo " $temp"
+elif [ $temp -lt 70 ]; then
+    echo " $temp"
+else
+    echo "<span color='#cc241d'>!</span>$temp"
+fi
