@@ -2,20 +2,20 @@
 
 get_action() {
     tofi --prompt-text="powermenu: " << EOF
-logout
+lock
 poweroff
+logout
 reboot
 reload
-exit
 EOF
 }
 
 ACTION=$(get_action)
 
 case $ACTION in
-    logout) swaymsg exit;;
+    lock) swaylock -f;;
     poweroff) loginctl poweroff;;
+    logout) swaymsg exit;;
     reboot) loginctl reboot;;
     reload) swaymsg reload;;
-    exit) swaymsg exit;;
 esac
