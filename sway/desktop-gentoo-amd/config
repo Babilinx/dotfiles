@@ -28,7 +28,7 @@ set $screenshot grim /home/bastien/Images/Screenshots/$(date +'%F-%H%M%S_grim.pn
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /home/bastien/Images/Wallpapers/Sway_Wallpaper_Blue_1920x1080.png fill
+output * bg #1d2021 solid_color
 #
 # Example configuration:
 #
