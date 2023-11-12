@@ -1,12 +1,4 @@
 #!/usr/bin/env bash
 
-
-generic() {
-	cp bash/.bashrc ~/.bashrc
-	cp bash/.bash_profile ~/.bash_profile
-}
-
-
-case $TARGET in
-	*) generic;;
-esac
+cp bash/.bashrc ~/.bashrc
+cp bash/.bash_profile ~/.bash_profile
