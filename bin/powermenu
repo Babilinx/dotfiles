@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+get_action() {
+    tofi --prompt-text="powermenu: " << EOF
+logout
+poweroff
+reboot
+reload
+exit
+EOF
+}
+
+ACTION=$(get_action)
+
+case $ACTION in
+    logout) swaymsg exit;;
+    poweroff) loginctl poweroff;;
+    reboot) loginctl reboot;;
+    reload) swaymsg reload;;
+    exit) swaymsg exit;;
+esac
