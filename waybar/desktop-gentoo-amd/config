@@ -38,7 +38,8 @@
 
 
     "clock": {
-        "format": "{:%a %b %e  %R}",
+        "format": "{:%H:%M:%S %d/%m/%Y}",
+        "tooltip-format": "{calendar}",
         "interval": 30
 },
 

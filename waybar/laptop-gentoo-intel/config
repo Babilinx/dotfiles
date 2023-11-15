@@ -38,8 +38,9 @@
 
 
     "clock": {
-        "format": "{:%a %b %e  %R}",
-        "interval": 30
+        "format": "{:%H:%M:%S %d/%m/%Y}",
+        "tooltip-format": "{calendar}",
+        "interval": 1
 },
 
     "battery": {
