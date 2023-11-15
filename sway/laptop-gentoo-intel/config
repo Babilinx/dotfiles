@@ -25,7 +25,9 @@ set $menu tofi-drun --drun-launch=true
 # Custom power menu (/home/$USER/bin needs to be in $PATH)
 set $powermenu powermenu
 # Screenshot tool
-set $screenshot grim /home/bastien/Images/Screenshots/$(date +'%F-%H%M%S_grim.png')
+set $screenshot grim - | wl-copy
+set $screenshot_selected grim -g "$(slurp)" - | wl-copy
+set $screenshot_window grim -g "$(swaymsg -t get_tree | jq -j '.. | select(.type?) | select(.focused).rect | "\(.x),\(.y) \(.width)x\(.height)"')" - | wl-copy
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
@@ -125,6 +127,8 @@ default_border pixel
 
     # Take screenshots
     bindsym Print exec $screenshot
+    bindsym Shift+Print exec $screenshot_selected
+    bindsym Alt+Print exec $screenshot_window
 #
 # Moving around:
 #
