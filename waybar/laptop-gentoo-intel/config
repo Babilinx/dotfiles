@@ -58,7 +58,7 @@
         "format-discharging-critical": "<span color='#fb4934'>{icon}</span> {capacity}%",
         "format-charging-full": "<span color='#83a898'>{icon}</span> {capacity}%",
         "format-charging": "<span color='#8ec07c'>{icon}</span> {capacity}%",
-        "format-icons": ["", "", "", "", ""],
+        "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
         "interval": 5,
         "tooltip": "true",
         "tooltip-format-discharging": "Power: {power}W\n{timeTo}",
@@ -67,8 +67,9 @@
 
     "network": {
         "format-ethernet": "󰈀 {bandwidthUpOctets} / {bandwidthDownOctets}",
-        "format-wifi": " {bandwidthUpOctets} / {bandwidthDownOctets}",
+        "format-wifi": "{icon} {bandwidthUpOctets} / {bandwidthDownOctets}",
         "format-disconnected": "",
+        "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
         "tooltip-format-ethernet": "Interface : {ifname}\nIP : {ipaddr}",
         "tooltip-format-wifi": "Interface : {ifname}\nSSID : {essid}\nSignal : {signalStrength}\nFrequency: {frequency}\nIP: {ipaddr}",
         "interval": 2
@@ -118,15 +119,12 @@
     "pulseaudio": {
         "format": "{icon} {volume}%",
         "format-muted": "󰝟 ",
-        "interval": 60,
-
-        "format-icons": {
-            "default": [""]
-        },
-
+        "format-icons": ["󰕿", "󰖀", "󰕾"],
         "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
         "on-scroll-up": "exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+ -l 1.2",
         "on-scroll-down": "exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%- -l 1.2",
+        "interval": 60
+
     
 },
     "keyboard-state": {
