@@ -6,7 +6,7 @@
 
     "modules-left": ["sway/workspaces", "custom/scratch", "sway/mode", "sway/window"],
     "modules-center": [],
-    "modules-right": ["network", "temperature", "pulseaudio", "battery", "backlight", "privacy", "keyboard-state", "clock", "tray"],
+    "modules-right": ["network", "custom/temperature", "pulseaudio", "battery", "backlight", "privacy", "keyboard-state", "clock", "tray"],
 
 
     "sway/workspaces": {
@@ -74,12 +74,13 @@
         "interval": 2
 },
 
-    "temperature": {
-        "termal-zone": "3",
-        "critical-threshold": 80,
-        "format": "{icon} {temperatureC}°C",
-        "format-icons":["", "", "", ""],
-        "format-critical": "<span color='#cc241d'>!</span> {temperatureC}°C",
+    "custom/temperature": {
+        //"thermal-zone": "3",
+        //"critical-threshold": 80,
+        "exec": "get_cpu_temp",
+        "format": "{}°C",
+        //"format-icons":["", "", "", "", ""],
+        //"format-critical": "<span color='#cc241d'>!</span> {}°C",
         "interval": 5
 },
 
