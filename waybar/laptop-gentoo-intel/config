@@ -87,7 +87,8 @@
 
     "backlight": {
         "device": "intel_backlight",
-        "format": " {percent}%",
+        "format": "{icon} {percent}%",
+        "format-icons": ["󰛩", "󱩎", "󱩏", "󱩐", "󱩑", "󱩒", "󱩓", "󱩔", "󱩕", "󱩖", "󰛨"],
         "on-scroll-up": "light -A 5",
         "on-scroll-down": "light -U 5",
         "interval": 5
