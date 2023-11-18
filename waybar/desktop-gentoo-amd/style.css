@@ -41,6 +41,14 @@ window#waybar {
 }
 
 
+#workspaces button:hover {
+    box-shadow: none;
+    text-shadow: none;
+    background: none;
+    transition: none;
+}
+
+
 #workspaces button.focused { 
     padding: 0px 7px 0px 7px; 
     color: #fbf1c7;
