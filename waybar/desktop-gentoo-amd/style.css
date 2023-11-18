@@ -80,14 +80,10 @@ window#waybar.empty {
 }
 
 
-#temperature, #pulseudio, #privacy {
+#temperature, #pulseaudio, #privacy, #network {
     padding: 0px 10px 0px 10px;
 }
 
-#network {
-    padding: 0px 5px 0px 10px;
-}
-    
 
 #clock {
     margin: 0px 5px 0px 10px;
