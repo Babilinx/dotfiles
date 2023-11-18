@@ -40,26 +40,8 @@
     "clock": {
         "format": "{:%H:%M:%S %d/%m/%Y}",
         "tooltip-format": "{calendar}",
-        "interval": 30
 },
 
-/*    
-    "battery": {
-        "bat": "BAT0",
-        "states": {
-            "full": 99,
-            "good": 98,
-            "normal": 98,
-            "warning": 20,
-            "critical": 20
-},
-
-        "format": "{icon}   {capacity}%",
-        "format-good": "{icon}   {capacity}%", 
-        "format-full": "   {capacity}%",
-        "format-icons": ["", "", "", "", ""],
-        "interval": 30
-},*/
 
     "network": {
         "interface": "enp4s0", 
@@ -78,14 +60,6 @@
         "interval": 5
 },
 
-/*
-    "backlight": {
-        "device": "intel_backlight",
-        "format": "{icon}  {percent}%  ",
-        "format-icons": ["","","",""],
-        "interval": 60
-},
-*/
 
     "privacy": {
         "icon-spacing": 4,
