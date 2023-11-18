@@ -1,0 +1,38 @@
+ignore-empty-password
+show-failed-attempts
+
+# Font
+font=ComicShannsMonoNerdFont
+font-size=28
+
+### Colors
+#
+# Background
+color=1d2021
+# Key press
+bs-hl-color=fabd2f
+key-hl-color=b8bb26
+caps-lock-bs-hl-color=fabd2f
+caps-lock-key-hl-color=b8bb26
+# Indicator
+indicator-thickness=10
+separator-color=ebdbb2
+inside-color=282828
+inside-clear-color=282828
+inside-caps-lock-color=282828
+inside-ver-color=282828
+inside-wrong-color=282828
+layout-bg-color=282828
+layout-border-color=282828
+layout-text-color=ebdbb2
+line-uses-inside
+ring-color=ebdbb2
+ring-clear-color=fbf1c7
+ring-ver-color=458588
+ring-wrong-color=cc241d
+# Text
+text-wrong-color=ebdbb2
+text-ver-color=ebdbb2
+text-caps-lock-color=ebdbb2
+text-clear-color=ebdbb2
+text-color=d65d0e
