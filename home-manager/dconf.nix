@@ -189,5 +189,8 @@ with lib.hm.gvariant;
       window-size = mkTuple [ 921 492 ];
     };
 
+    "org/gnome/mutter" = {
+      dynamic-workspaces = true;
+    };
   };
 }
