@@ -44,7 +44,7 @@ with lib.hm.gvariant;
 
     "org/gnome/desktop/app-folders/folders/951cccf1-7187-46bb-aa74-44f883fda873" = {
       apps = [ "org.gnome.Extensions.desktop" "org.gnome.Settings.desktop" "com.mattjakeman.ExtensionManager.desktop" "xterm.desktop" "cups.desktop" ];
-      name = "Param\233trage";
+      name = "Paramétrage";
       translate = false;
     };
 
