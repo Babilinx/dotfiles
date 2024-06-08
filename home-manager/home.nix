@@ -36,6 +36,7 @@
     # '')
     webcord
     firefox
+    keepassxc
     librewolf
     dconf2nix
     gnomeExtensions.luminus-shell
