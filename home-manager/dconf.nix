@@ -39,33 +39,13 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/desktop/app-folders" = {
-      folder-children = [ "Utilities" "YaST" "Pardus" "951cccf1-7187-46bb-aa74-44f883fda873" ];
+      folder-children = [ "951cccf1-7187-46bb-aa74-44f883fda873" ];
     };
 
     "org/gnome/desktop/app-folders/folders/951cccf1-7187-46bb-aa74-44f883fda873" = {
       apps = [ "org.gnome.Extensions.desktop" "org.gnome.Settings.desktop" "com.mattjakeman.ExtensionManager.desktop" "xterm.desktop" "cups.desktop" ];
       name = "Paramétrage";
       translate = false;
-    };
-
-    "org/gnome/desktop/app-folders/folders/Pardus" = {
-      categories = [ "X-Pardus-Apps" ];
-      name = "X-Pardus-Apps.directory";
-      translate = true;
-    };
-
-    "org/gnome/desktop/app-folders/folders/Utilities" = {
-      apps = [ "gnome-abrt.desktop" "gnome-system-log.desktop" "nm-connection-editor.desktop" "org.gnome.baobab.desktop" "org.gnome.Connections.desktop" "org.gnome.DejaDup.desktop" "org.gnome.Dictionary.desktop" "org.gnome.DiskUtility.desktop" "org.gnome.Evince.desktop" "org.gnome.FileRoller.desktop" "org.gnome.fonts.desktop" "org.gnome.Loupe.desktop" "org.gnome.seahorse.Application.desktop" "org.gnome.tweaks.desktop" "org.gnome.Usage.desktop" "vinagre.desktop" ];
-      categories = [ "X-GNOME-Utilities" ];
-      excluded-apps = [ "org.gnome.Console.desktop" ];
-      name = "X-GNOME-Utilities.directory";
-      translate = true;
-    };
-
-    "org/gnome/desktop/app-folders/folders/YaST" = {
-      categories = [ "X-SuSE-YaST" ];
-      name = "suse-yast.directory";
-      translate = true;
     };
 
     "org/gnome/desktop/background" = {
