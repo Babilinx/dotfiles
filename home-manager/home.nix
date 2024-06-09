@@ -40,6 +40,7 @@
     librewolf
     dconf2nix
     morewaita-icon-theme
+    fastfetch
     gnomeExtensions.luminus-shell
   ];
 
