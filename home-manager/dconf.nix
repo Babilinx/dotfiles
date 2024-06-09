@@ -66,6 +66,11 @@ with lib.hm.gvariant;
       color-scheme = "default";
       gtk-theme = "adw-gtk3";
       icon-theme = "MoreWaita";
+      font-antialiasing = "rgba";
+      font-hinting = "full";
+      font-name = "Overpass Nerd Font Propo 11";
+      document-font-name = "Overpass Nerd Font Propo 11";
+      monospace-font-name = "Overpass Nerd Font Propo 10";
     };
 
     "org/gnome/desktop/notifications" = {

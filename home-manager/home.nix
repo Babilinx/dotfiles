@@ -41,6 +41,7 @@
     dconf2nix
     morewaita-icon-theme
     fastfetch
+    (nerdfonts.override { fonts = [ "Overpass" ]; })
     gnomeExtensions.luminus-shell
   ];
 
@@ -87,4 +88,7 @@
     userName = "Babilinx";
     userEmail = "babilinx.evx1o@simplelogin.com";
   };
+
+  fonts.fontconfig.enable = true;
+
 }
