@@ -39,6 +39,7 @@
     keepassxc
     librewolf
     dconf2nix
+    morewaita-icon-theme
     gnomeExtensions.luminus-shell
   ];
 

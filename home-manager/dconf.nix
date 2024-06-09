@@ -65,6 +65,7 @@ with lib.hm.gvariant;
     "org/gnome/desktop/interface" = {
       color-scheme = "default";
       gtk-theme = "adw-gtk3";
+      icon-theme = "MoreWaita";
     };
 
     "org/gnome/desktop/notifications" = {
