@@ -7,7 +7,6 @@
     gnome-text-editor
     adw-gtk3
     gnome.gnome-tweaks
-    gnome-extension-manager
     git
   ];
 
