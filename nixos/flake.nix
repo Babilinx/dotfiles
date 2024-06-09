@@ -11,9 +11,16 @@
       lib = nixpkgs.lib;
     in {
     nixosConfigurations = {
+      default = lib.nixosSystem {
+        specialArgs = { inherit inputs; };
+      };
+      akheron = lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [ ./hosts/akheron/configuration.nix ./modules inputs.disko.nixosModules.disko ];
+      };
       styx = lib.nixosSystem {
         system = "x86_64-linux";
-        modules = [ ./configuration.nix inputs.disko.nixosModules.disko];
+        modules = [ ./hosts/styx/configuration.nix ];
       };
     };
   };

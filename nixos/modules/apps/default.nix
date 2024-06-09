@@ -1,0 +1,7 @@
+{
+
+  imports = [
+    ./default-apps.nix
+  ];
+
+}
