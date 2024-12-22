@@ -1,0 +1,211 @@
+{
+    "layer": "top",	
+    "position": "top",
+    "height": 10,
+
+    "modules-left": ["niri/window"],
+    "modules-center": ["custom/clock", "custom/notifications"],
+    "modules-right": ["tray", "privacy", "backlight", "group/audio", "power-profiles-daemon", "battery", "temperature", "network", "group/powermenu"],
+
+
+    "niri/workspaces": {
+        "disable-scroll": true,
+        "disable-markup": true,
+        "format": "{index}" 
+},
+
+    "niri/window": {
+        "format": "{}",
+        "max-length": 85
+},
+
+    "custom/clock": {
+        "interval": 5,
+        "exec": "date +\"%a %d %b %H:%M\"",
+        "format": "{}",
+ },
+
+    "group/powermenu": {
+        "orientation": "inherit",
+        "modules": ["custom/power", "custom/reboot", "custom/suspend", "custom/logout"],
+        "drawer": {
+            "transition-duration": 300,
+            "transition-left-to-right": false,
+    },
+},
+
+    "custom/power": {
+        "tooltip": false,
+        "format": "",
+        "on-click": "systemctl poweroff",
+},
+
+    "custom/reboot": {
+        "tooltip": false,
+        "format": "",
+        "on-click": "systemctl reboot",
+},
+
+    "custom/suspend": {
+        "tooltip": false,
+        "format": "",
+        "on-click": "systemctl suspend",
+},
+
+    "custom/logout": {
+        "tooltip": false,
+        "format": "",
+        "on-click": "niri msg action quit"
+},
+
+    "tray": {
+        "icon-size": 18,
+        "spacing": 15
+},
+
+    "custom/notifications": {
+        "tooltip": false,
+        "exec": "swaync-client -swb",
+        "return-type": "json",
+        "format": "{icon}",
+        "format-icons": { "none": "", "notification": " " },
+        "on-click": "swaync-client -t -sw",
+},
+
+
+    "clock": {
+        "format": "{:%a %m %b %H:%M}",
+        "tooltip-format": "{calendar}",
+        "timezone": "Europe/Paris",
+        "interval": 60
+},
+
+
+    "network": {
+        "format-ethernet": "󰈀",
+        "format-wifi": "{icon}",
+        "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+        "format-disconnected": "󰈀",
+        "tooltip-format-ethernet": "Interface : {ifname}\nIP : {ipaddr}",
+        "tooltip-format-wifi": "Interface : {ifname}\nSSID : {essid}\nSignal : {signalStrength}\nFrequency: {frequency}\nIP: {ipaddr}",
+        "interval": 2
+},
+
+    "temperature": {
+        "hwmon-path": "/sys/devices/platform/coretemp.0/hwmon/hwmon5/temp1_input",
+        "critical-threshold": 80,
+        "format": "{icon}",
+        "format-icons":["", "", "", ""],
+        "format-critical": "<span bgcolor='#E01B24'></span>",
+        "interval": 5
+},
+
+
+    "privacy": {
+        "icon-spacing": 4,
+        "icon-size": 14,
+        "transition-duration": 2,
+        "modules": [
+            {
+                "type": "screenshare",
+                "tooltip": true,
+                "tooltip-icon-size": 24
+            },
+            {
+                "type": "audio-out",
+                "tooltip": true,
+                "tooltip-icon-size": 24
+            },
+        ],
+},
+
+    "pulseaudio": {
+        "format": "{icon}",
+        "format-muted": "󰝟",
+        "format-icons": ["󰕿", "󰖀", "󰕾"],
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "on-scroll-up": "exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+ -l 1.2",
+        "on-scroll-down": "exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%- -l 1.2",
+        "interval": 60
+    
+},
+
+    "pulseaudio/slider": {
+        "min": 0,
+        "max": 100,
+        "orientation": "horizontal"
+},
+
+
+    "group/audio": {
+        "orientation": "inherit",
+        "modules": ["pulseaudio", "pulseaudio/slider"],
+        "drawer": {
+            "transition-duration": 300,
+            "transition-left-to-right": true,
+    },
+},
+
+    "group/light": {
+        "orientation": "inherit",
+        "modules": ["backlight", "backlight/slider"],
+        "drawer": {
+            "transition-duration": 300,
+            "transition-left-to-right": true,
+    },
+},
+
+    "backlight": {
+    "device": "intel_backlight",
+    "format": "{icon}",
+    "format-icons": ["󰛩", "󱩎", "󱩏", "󱩐", "󱩑", "󱩒", "󱩓", "󱩔", "󱩕", "󱩖", "󰛨"],
+    "on-scroll-up": "light -A 1",
+    "on-scroll-down": "light -U 1",
+    "interval": 5,
+    "tooltip": true,
+    "tooltip-format": "{percent}%",
+},
+
+    "backlight/slider": {
+        "min": 6000,
+        "max": 120000,
+        "orientation": "horizontal",
+        "device": "intel_backlight"
+},
+
+    "battery": {
+        "bat": "BAT1",
+        "states": {
+            "full": 95,
+            "normal": 90,
+            "warning": 35,
+            "critical": 20
+},
+
+        "format": "{icon}",
+        "format-full-discharging": "{icon}",
+        "format-discharging-normal": "{icon}",
+        "format-discharging-warning": "<span color='#fabd2f'>{icon}</span>",
+        "format-discharging-critical": "<span color='#fb4934'>{icon}</span>",
+        "format-charging-full": "<span color='#83a898'>{icon}</span>",
+        "format-charging": "<span color='#8ec07c'>{icon}</span>",
+        "format-icons": ["", "", "", "", ""],
+        "interval": 5,
+        "tooltip": "true",
+        "tooltip-format-discharging": "Power: {power}W\n{timeTo}",
+        "tooltip-format-charging": "Power: {power}W\n{timeTo}"
+},
+
+    "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+    "tooltip": true,
+    "format-icons": {
+        "default": "󰾅",
+        "performance": "󰓅",
+        "balanced": "󰾅",
+        "power-saver": "󰾆"
+    },
+},
+
+}
